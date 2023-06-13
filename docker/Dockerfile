@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM --platform=linux/amd64 debian:bullseye
 
 RUN apt-get update -y && apt-get install --no-install-recommends -y -q \
     curl \

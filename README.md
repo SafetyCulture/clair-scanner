@@ -1,3 +1,5 @@
+**Note: This was forked from https://github.com/arminc/clair-scanner and simply contains changes to build the Linux ARM64 compatible release binaries.**
+
 # Clair scanner
 
 ![Maintenance](https://img.shields.io/maintenance/yes/2020.svg)
@@ -24,10 +26,10 @@ CoreOS has created an awesome container scan tool called Clair. Clair is also us
 
 This is where clair-scanner comes into place. The clair-scanner does the following:
 
-* Scans an image against Clair server
-* Compares the vulnerabilities against a whitelist
-* Tells you if there are vulnerabilities that are not in the whitelist and fails
-* If everything is fine it completes correctly
+- Scans an image against Clair server
+- Compares the vulnerabilities against a whitelist
+- Tells you if there are vulnerabilities that are not in the whitelist and fails
+- If everything is fine it completes correctly
 
 ## Clair server or standalone
 
@@ -41,16 +43,17 @@ The clair-scanner is a copy of the Clair 'analyze-local-images' <https://github.
 
 clair-scanner is available on Linux, MacOS, and Windows platforms.
 
-* Binaries for Linux, Windows, and Mac are available in the [releases](https://github.com/arminc/clair-scanner/releases) page.
-* You can also install from source. To do so you must:
-  1. Have go 1.11+ installed  
+- Binaries for Linux, Windows, and Mac are available in the [releases](https://github.com/arminc/clair-scanner/releases) page.
+- You can also install from source. To do so you must:
+
+  1. Have go 1.11+ installed
   1. Clone the repo
   1. Build and install the executable
 
   ```sh
   # Clone the repo
   git clone git@github.com:arminc/clair-scanner.git
-  # Build and install 
+  # Build and install
   cd clair-scanner
   make build
   make installLocal
@@ -158,6 +161,7 @@ images:
   alpine:
     CVE-2017-3261: SE
 ```
+
 ## Troubleshooting
 
 If you get `[CRIT] ▶ Could not save Docker image [image:version]: Error response from daemon: reference does not exist`, this means that image `image:version` is not locally present. You should have this image present locally before trying to analyze it (e.g.: `docker pull image:version`).
