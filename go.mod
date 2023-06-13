@@ -32,7 +32,7 @@ require (
 	github.com/stretchr/testify v1.1.4
 	golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
 	golang.org/x/net v0.0.0-20200226121028-0de0cce0169b
-	golang.org/x/sys v0.0.0-20190412213103-97732733099d
+	golang.org/x/sys v0.9.0
 	golang.org/x/tools v0.0.0-20200624225443-88f3c62a19ff // indirect
 	gopkg.in/yaml.v2 v2.0.0-20170812160011-eb3733d160e7
 )
