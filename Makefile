@@ -1,6 +1,6 @@
 .PHONY : install ensure build docker rmdocker test integration integrationlinux
 
-install:	
+install:
 	go get -u golang.org/x/tools/cmd/cover
 	go get -u github.com/mattn/goveralls
 
@@ -15,7 +15,7 @@ docker:
 		docker build -t golang-cross-compile .
 
 cross: docker
-	docker run -ti --rm -e CGO_ENABLED=0 -v $(CURDIR):/gopath/src/clair-scanner -w /gopath/src/clair-scanner golang-cross-compile gox -osarch="darwin/amd64 darwin/386 linux/amd64 linux/arm64 linux/386 windows/amd64 windows/386" -output "dist/{{.Dir}}_{{.OS}}_{{.Arch}}"
+	docker run -ti --rm -e CGO_ENABLED=0 -v $(CURDIR):/gopath/src/clair-scanner -w /gopath/src/clair-scanner golang-cross-compile gox -osarch="darwin/amd64 darwin/arm64 linux/amd64 linux/arm64" -output "dist/{{.Dir}}_{{.OS}}_{{.Arch}}"
 
 clean:
 	rm -rf dist
